@@ -22,7 +22,7 @@ export default function MapScreen() {
   const [newPlace, setNewPlace] = useState("");
 
   const addCity = () => {
-    fetch("http://10.9.1.137:3000/places", {
+    fetch("https://map-s-back.vercel.app/places", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -60,7 +60,7 @@ export default function MapScreen() {
       }
     })();
 
-    fetch(`http://10.9.1.137:3000/places/${user.nickname}`)
+    fetch(`https://map-s-back.vercel.app/places/${user.nickname}`)
       .then((response) => response.json())
       .then((data) => {
         dispatch(initiatePLace(data.places));

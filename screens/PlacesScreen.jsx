@@ -13,7 +13,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addPlace, removePlace } from "../reducers/user";
 
 const fetchPost = (nickname, name, latitude, longitude) => {
-  fetch("http://10.9.1.137:3000/places", {
+  fetch("https://map-s-back.vercel.app/places", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
@@ -60,7 +60,7 @@ export default function PlacesScreen() {
   };
 
   function deleteMarker(name) {
-    fetch("http://10.9.1.137:3000/places", {
+    fetch("https://map-s-back.vercel.app/places", {
       method: "DELETE",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
